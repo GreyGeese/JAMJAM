@@ -8,14 +8,13 @@ public class Jump : MonoBehaviour
     public float JumpVelocity;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2.5f;
-    [SerializeField] float groundCheckDistance = 0.04f;
     [SerializeField] LayerMask collisionMask;
     Rigidbody rb;
-    BoxCollider collid;
+    [SerializeField] BoxCollider collid;
+    bool grounded;
 
     void Awake()
     {
-        collid = GetComponent<BoxCollider>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -30,10 +29,8 @@ public class Jump : MonoBehaviour
         {
             //Source: https://www.youtube.com/watch?v=7KiK0Aqtmzc&t=514s
 
-            if (Grounded())
+            if (grounded)
             {
-                Debug.Log("i work");
-
                 rb.velocity = Vector3.up * JumpVelocity;
             }
             if (rb.velocity.y < 0)
@@ -50,33 +47,12 @@ public class Jump : MonoBehaviour
     {
         rb.velocity += Vector3.up * Physics2D.gravity.y * (hight - 1) * JumpVelocity * Time.deltaTime;
     }
-
-
-    bool Grounded()
+    private void OnTriggerEnter(Collider other)
     {
-        /*RaycastHit2D hit = Physics2D.BoxCast(transform.position, collid.size, 0.0f, Vector2.down, groundCheckDistance, collisionMask);
-        if (hit.collider != null) { return true; }
-        else return false;*/
-
-        RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(transform.lossyScale.x * GetComponent<BoxCollider>().size.x / 2,
-           transform.lossyScale.y * GetComponent<BoxCollider>().size.y / 2 + groundCheckDistance), Vector3.right, transform.lossyScale.x * GetComponent<BoxCollider>().size.x, collisionMask);
-        
-        Debug.DrawRay(transform.position - new Vector3(transform.lossyScale.x * GetComponent<BoxCollider>().size.x / 2,
-           transform.lossyScale.y * GetComponent<BoxCollider>().size.y / 2 + groundCheckDistance), Vector3.right * 
-           transform.lossyScale.x * GetComponent<BoxCollider>().size.x, Color.red);
-        
-        if (hit.collider != null && rb.velocity.y <= 0) 
-        {
-            Component[] temp = hit.collider.gameObject.GetComponents(typeof(JumpableObjectScript));
-            for (int i = 0; i < temp.Length; i++)
-            {
-                if ((temp[i] as JumpableObjectScript).enabled)
-                {
-                    (temp[i] as JumpableObjectScript).jumpedOn(gameObject);
-                }
-            }
-            if (rb.velocity.y <= 0) return true; //Behövs för att .jumpedOn kan leda till att spelaren skjuts uppåt
-        }
-        return false;
+        grounded = true;
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        grounded = false;
     }
 }

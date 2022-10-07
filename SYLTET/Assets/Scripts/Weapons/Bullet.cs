@@ -48,9 +48,10 @@ public class Bullet : MonoBehaviour
         stats = new MovementSats(acceleration, maxSpeed, transform);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
-        bulletStats = new BulletStats(damge, other.gameObject);
+        Debug.Log(other.gameObject);
+        bulletStats = new BulletStats(other.gameObject);
         if ((mask & 1 << other.gameObject.layer) != 1 << other.gameObject.layer) return;
         bulletStats.AttackGameObject();
         Destroy(gameObject);
@@ -58,9 +59,5 @@ public class Bullet : MonoBehaviour
     public void setHolderObject(GameObject _gameObject)
     {
         holderObject = _gameObject;
-    }
-    public void setTargetMask()
-    {
-
     }
 }
