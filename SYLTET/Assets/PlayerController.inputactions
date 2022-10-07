@@ -21,7 +21,7 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Shoot",
@@ -67,7 +67,7 @@
                     "name": "",
                     "id": "6f28442c-392f-45f9-9a20-ff5e46c6695c",
                     "path": "<Gamepad>/buttonSouth",
-                    "interactions": "Tap",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
