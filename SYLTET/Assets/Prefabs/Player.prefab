@@ -1133,6 +1133,11 @@ MonoBehaviour:
   maxSpeed: 10
   hearts: 1
   spawner: {fileID: 0}
+  materialList:
+  - {fileID: 2100000, guid: 7e4d97b6e7a6d7e48acdd0327986fe53, type: 2}
+  - {fileID: 2100000, guid: 1d829436dd333bd4f8644ee269396b81, type: 2}
+  - {fileID: 2100000, guid: 3bc1b5de0106a2b4f8e69d2727835d84, type: 2}
+  - {fileID: 2100000, guid: cabbd8d97ced31c4dbf5599ee558d5d8, type: 2}
 --- !u!1 &7725659391538534747
 GameObject:
   m_ObjectHideFlags: 0
