@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 909368394}
   m_Layer: 0
   m_Name: PlayerSpawner
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -407,6 +407,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   collid: {fileID: 0}
+  isa: {fileID: 0}
 --- !u!1 &1130841255
 GameObject:
   m_ObjectHideFlags: 0
