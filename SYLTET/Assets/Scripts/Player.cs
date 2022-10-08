@@ -23,8 +23,10 @@ public class Player : MonoBehaviour
     [SerializeField] private Material[] materialList;
     ScoreManager scoreManager;
     PlayerSpawnManager playerSpawnManager;
+    [SerializeField] private PlayerAudioManager audioManager;
     private void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<PlayerAudioManager>();
         scoreManager = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>();
         gameObject.GetComponentInChildren<Renderer>().material = materialList[amountOfPlayersSpawned];
         scoreManager.AddPlayer(gameObject,amountOfPlayersSpawned);
@@ -42,6 +44,7 @@ public class Player : MonoBehaviour
     }
     public void Controllers(InputAction.CallbackContext context)
     {
+        
         //Vector2 input = context.ReadValue<Vector2>();
         Vector2 input = hejKhaled(context.ReadValue<Vector2>());
         
@@ -55,6 +58,7 @@ public class Player : MonoBehaviour
         
             if(coolDown <= 0)
         {
+            audioManager.playSoundswithKeyCode("shoot");
             weapon.Shoot();
             coolDown = 3;
         }
@@ -65,6 +69,7 @@ public class Player : MonoBehaviour
     }
     public void Death()
     {
+        audioManager.playSoundswithKeyCode("destroyPlayer");
         spawner.setStartRespawn(gameObject);
         health.Death();
     }

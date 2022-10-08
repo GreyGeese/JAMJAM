@@ -17,10 +17,12 @@ public class PlayerController : MonoBehaviour
     public bool moveLeft = false;
     private AnimationManager animManager;
 
+    [SerializeField] private PlayerAudioManager audioManager;
     [SerializeField] private IsGrounded groundCheck;
 
     private void OnEnable()
     {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<PlayerAudioManager>();
         animManager = GetComponent<AnimationManager>();
         //rB = gameObject.GetComponent<Rigidbody>();
     }
@@ -57,6 +59,7 @@ public class PlayerController : MonoBehaviour
 
         if(moveInp.x > 0 && moveLeft)
         {
+            audioManager.playSoundswithKeyCode("weehoo");
             //animManager.SetTrigger("Turn");
             transform.rotation = Quaternion.Euler(0, 90, 0);
             moveLeft = false;
@@ -64,6 +67,7 @@ public class PlayerController : MonoBehaviour
         
         if(moveInp.x < 0 && !moveLeft)
         {
+            audioManager.playSoundswithKeyCode("weehoo");
             //animManager.SetTrigger("Turn");
             transform.rotation = Quaternion.Euler(0, -90, 0);
             moveLeft = true;
