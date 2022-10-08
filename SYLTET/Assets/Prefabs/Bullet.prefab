@@ -111,8 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   durabilityime: 4
-  acceleration: 100
-  maxSpeed: 4.9
+  acceleration: 9999
+  maxSpeed: 25
   mask:
     serializedVersion: 2
     m_Bits: 64

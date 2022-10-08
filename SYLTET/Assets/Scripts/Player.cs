@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerAudioManager audioManager;
     [SerializeField] private GameObject rigidExplosion;
     [SerializeField] private GameObject rigidExplosionPosiition;
+
+    public float timeBetweenShots = 0.5f;
     private void Start()
     {
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<PlayerAudioManager>();
@@ -63,7 +65,7 @@ public class Player : MonoBehaviour
         {
             audioManager.playSoundswithKeyCode("shoot");
             weapon.Shoot();
-            coolDown = 3;
+            coolDown = timeBetweenShots;
         }
             
         
