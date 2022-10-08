@@ -11,7 +11,7 @@ public class Jump : MonoBehaviour
     [SerializeField] LayerMask collisionMask;
     Rigidbody rb;
     [SerializeField] BoxCollider collid;
-    bool grounded;
+    bool grounded = true;
 
     void Awake()
     {
