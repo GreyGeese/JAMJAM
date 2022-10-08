@@ -15,22 +15,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpCD = 0.8f;
     private float timer = 1;
     private bool moveLeft = true;
-    bool canGoRight = true;
-    bool canGoLeft = false;
     
     [SerializeField] private IsGrounded groundCheck;
 
     private void FixedUpdate()
     {
         transform.Translate(new Vector3(moveInp.x, transform.position.y, 0) * speed * Time.deltaTime);
+        
+
+
     }
     private void Update()
     {
+       
         timer += Time.deltaTime;
     }
-    public void OnMove(InputAction.CallbackContext ctx) {
-        //moveInp = ctx.ReadValue<Vector2>();
-    }
+    public void OnMove(InputAction.CallbackContext ctx) => moveInp = ctx.ReadValue<Vector2>();
 
     public void OnJump(InputAction.CallbackContext context)
     {
@@ -48,32 +48,10 @@ public class PlayerController : MonoBehaviour
     }
     public void OnShoot(InputAction.CallbackContext context)
     {
-       
         Debug.Log("Fire!");
         FireEvent.Invoke();
     }
 
    
-    public void OnRotateLeft(InputAction.CallbackContext context)
-    {
-        if (canGoLeft)
-        {
-            transform.Translate(1, 0, 0);
-            gameObject.transform.Rotate(0,180, 0);
-            canGoLeft = false;
-            canGoRight = true;
-        }
-        
-    }
-    public void OnRotateRight(InputAction.CallbackContext context)
-    {
-        if (canGoRight)
-        {
-            transform.Translate(-1, 0, 0);
-            gameObject.transform.Rotate(0, 180, 0);
-            canGoRight = false;
-            canGoLeft = true;
-        }
 
-    }
 }
