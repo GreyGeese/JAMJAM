@@ -356,7 +356,7 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 128
-  collid: {fileID: 0}
+  collid: {fileID: 1183741106}
 --- !u!1 &1130841255
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,7 +547,6 @@ GameObject:
   - component: {fileID: 1800915286}
   - component: {fileID: 1800915285}
   - component: {fileID: 1800915284}
-  - component: {fileID: 1800915288}
   m_Layer: 7
   m_Name: Ground
   m_TagString: Untagged
@@ -633,18 +632,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1800915288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1800915283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2087382d5e6bd547993a271d1f98af6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1961700162
 GameObject:
   m_ObjectHideFlags: 0
