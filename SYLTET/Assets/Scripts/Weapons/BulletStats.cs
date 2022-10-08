@@ -13,9 +13,11 @@ public class BulletStats
     }
     public void AttackGameObject()
     {
+        Debug.Log("trff");
         switch (target.tag)
         {
             case "Player":
+                Debug.Log("trff");
                 target.GetComponent<Player>().Death();
                 break;
             default: return;
