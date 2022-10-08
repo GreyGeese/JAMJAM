@@ -23,6 +23,6 @@ public class ChoosePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //player.transform.rotation = player.transform.rotation * new Quaternion(0,0,0,0);
+        //player.transform.Rotate(0, 50 * Time.deltaTime, 0);
     }
 }

@@ -28,7 +28,7 @@ public class DeadLine : MonoBehaviour
                 Time.timeScale = 0;
                 canvas.renderMode = RenderMode.ScreenSpaceCamera;
                 camera.clearFlags = CameraClearFlags.Depth;
-                camera.cullingMask = LayerMask.GetMask("UI");
+                camera.cullingMask = LayerMask.GetMask("UI") + LayerMask.GetMask("Player");
                 camera.orthographic = true;
                 canvas.worldCamera = camera;
                 canvas.planeDistance = 10;
