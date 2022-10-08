@@ -5,11 +5,14 @@ using UnityEngine;
 public class PlayerAudioManager : MonoBehaviour
 {
     private AudioSource source;
-    [SerializeField] AudioClip[] walkSounds;
+    
     [SerializeField] AudioClip[] takeDamageSounds;
     [SerializeField] AudioClip[] destroyPlayerSounds;
+    [SerializeField] AudioClip[] jamSplatteronFX;   // with delay or put on the fx instead
     [SerializeField] AudioClip[] winSounds;
-    [SerializeField] AudioClip jumpsounds;
+    [SerializeField] AudioClip jumpsound;
+    [SerializeField] AudioClip walksound;
+    [SerializeField] AudioClip runsound;
 
 
 
@@ -40,7 +43,13 @@ public class PlayerAudioManager : MonoBehaviour
 
     private void Update()
     {
-        iF(KeyCode.W, source.clip = destroyPlayerSounds[Random.Range(0, destroyPlayerSounds.Length)]);
+        playSoundswithKeyCode(KeyCode.Y, source.clip = destroyPlayerSounds[Random.Range(0, destroyPlayerSounds.Length)]);
+        playSoundswithKeyCode(KeyCode.U, source.clip = jamSplatteronFX[Random.Range(0, jamSplatteronFX.Length)]);
+        playSoundswithKeyCode(KeyCode.I, source.clip = takeDamageSounds[Random.Range(0, takeDamageSounds.Length)]);
+        playSoundswithKeyCode(KeyCode.O, source.clip = winSounds[Random.Range(0, winSounds.Length)]);
+        playSoundswithKeyCode(KeyCode.H, source.clip = walksound);
+        playSoundswithKeyCode(KeyCode.J, source.clip = runsound);
+        playSoundswithKeyCode(KeyCode.K, source.clip = jumpsound);
 
 
 
@@ -51,7 +60,7 @@ public class PlayerAudioManager : MonoBehaviour
 
 
 
-    private void iF(KeyCode key, AudioClip clip)
+    private void playSoundswithKeyCode(KeyCode key, AudioClip clip)
     {
 
         if (Input.GetKeyDown(key))  

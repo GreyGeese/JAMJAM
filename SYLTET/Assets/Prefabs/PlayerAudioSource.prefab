@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8943601463871893507}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.2422256, y: -1.3672174, z: 0.22419977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -141,10 +141,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01fa68a3cc092684d91f498d64c72bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
-  volume: 0
-  pitch: 0
-  spatialBlend: 0
+  takeDamageSounds:
+  - {fileID: 8300000, guid: 6523e82e57d39224d9bef62a0c2b0776, type: 3}
+  - {fileID: 8300000, guid: 39898f8d1dc227d41b6a57452057583b, type: 3}
+  - {fileID: 8300000, guid: 9e3f9d0c5cb94774a8b58aa38ddb5b72, type: 3}
+  destroyPlayerSounds:
+  - {fileID: 8300000, guid: ffea3163b09307b48a09d701b643f43a, type: 3}
+  - {fileID: 8300000, guid: 5fdc17dc2323c5d40b15bc91bd0c9a17, type: 3}
+  - {fileID: 8300000, guid: a7fe2a667a541ec4ab239e277deddfdc, type: 3}
+  - {fileID: 8300000, guid: 8f0703652c6bda54c9c9946187c6313e, type: 3}
+  jamSplatteronFX:
+  - {fileID: 8300000, guid: b7ccf785b00ad1c48b274bfb7bc94f9a, type: 3}
+  - {fileID: 8300000, guid: 57ce737871fc2c649878feccf0040716, type: 3}
+  winSounds:
+  - {fileID: 8300000, guid: 59e0f10a42d7c6645adfbb92f1021a00, type: 3}
+  - {fileID: 8300000, guid: 55add92fd9db3844d94bc37c5412ba76, type: 3}
+  - {fileID: 8300000, guid: 513f4b89c513efe41bd3387141cdca6a, type: 3}
+  jumpsound: {fileID: 8300000, guid: 17e39e87a1336f2489709dd1757e7239, type: 3}
+  walksound: {fileID: 0}
+  runsound: {fileID: 8300000, guid: 2305b5e063eb5ed45bc95bfaea702cad, type: 3}
+  volume: 0.55
+  pitch: 1
+  spatialBlend: 1
   isPitchAllowed: 0
   pitchMin: 0
   pitchMax: 0
