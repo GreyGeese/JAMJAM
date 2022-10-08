@@ -14,7 +14,7 @@ public class Jump : MonoBehaviour
     [SerializeField] BoxCollider collid;
     [SerializeField] private IsGrounded isa;
     bool grounded = true;
-
+    PlayerController pc;
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -30,7 +30,7 @@ public class Jump : MonoBehaviour
         {
             //Source: https://www.youtube.com/watch?v=7KiK0Aqtmzc&t=514s
 
-            rb.velocity = Vector3.up * JumpVelocity;
+            rb.AddForce(5,200,0);
             if (rb.velocity.y < 0)
             {
                 JumpUp(fallMultiplier);

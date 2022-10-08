@@ -58,14 +58,14 @@ public class PlayerController : MonoBehaviour
         if(moveInp.x > 0 && moveLeft)
         {
             //animManager.SetTrigger("Turn");
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 90, 0);
             moveLeft = false;
         }
         
         if(moveInp.x < 0 && !moveLeft)
         {
             //animManager.SetTrigger("Turn");
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            transform.rotation = Quaternion.Euler(0, -90, 0);
             moveLeft = true;
         }
 
@@ -96,6 +96,9 @@ public class PlayerController : MonoBehaviour
         FireEvent.Invoke();
     }
 
-
+    public Vector2 GetMoveInp()
+    {
+       return moveInp;
+    }
 
 }

@@ -18,7 +18,8 @@ public class Player : MonoBehaviour
     [SerializeField] private Spawner spawner;
     Health health;
     private float coolDown;
-    
+    private int score;
+
     private void Start()
     {
         health = new Health(hearts, gameObject);
@@ -65,4 +66,18 @@ public class Player : MonoBehaviour
     {
         return new Vector3(input.x, 0, 0);
     }
+
+   
+    public int GetScore()
+    {
+        return score;
+    }
+    public void IncreaseScore()
+    {
+        score++;
+        Debug.Log(score);
+    }
+    
+
+
 }

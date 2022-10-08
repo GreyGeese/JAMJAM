@@ -26,4 +26,7 @@ public class Weapon : MonoBehaviour
     {
         this.attackSpeed *= attackSpeed;
     }
+
+    
+
 }
