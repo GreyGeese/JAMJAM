@@ -5,7 +5,12 @@ using UnityEngine;
 public class PlayerAudioManager : MonoBehaviour
 {
     private AudioSource source;
-    [SerializeField] AudioClip[] sounds;
+    [SerializeField] AudioClip[] walkSounds;
+    [SerializeField] AudioClip[] takeDamageSounds;
+    [SerializeField] AudioClip[] destroyPlayerSounds;
+    [SerializeField] AudioClip[] winSounds;
+    [SerializeField] AudioClip jumpsounds;
+
 
 
     [Header("Attributes")]
@@ -29,26 +34,36 @@ public class PlayerAudioManager : MonoBehaviour
         source.pitch = pitch;
         source.volume = volume;
         source.spatialBlend = spatialBlend;
+
+
     }
 
     private void Update()
     {
+        iF(KeyCode.W, source.clip = destroyPlayerSounds[Random.Range(0, destroyPlayerSounds.Length)]);
+
 
 
     }
 
-    private void playerMoveSounds()
-    {
-        // Whatever the controlls for sertain moves
 
-        if (Input.GetKeyDown(KeyCode.W))
+
+
+
+
+    private void iF(KeyCode key, AudioClip clip)
+    {
+
+        if (Input.GetKeyDown(key))  
         {
             if (isPitchAllowed)
             {
                 source.pitch = Random.Range(pitchMin, pitchMax);
             }
 
-            source.PlayOneShot(source.clip = sounds[Random.Range(0, sounds.Length)]);
+            source.PlayOneShot(clip);
         }
+
     }
+
 }
