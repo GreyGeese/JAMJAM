@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ChoosePlayer : MonoBehaviour
 {
-    private GameObject player;
+
+    [SerializeField] private GameObject player;
     public void SetPlayer(GameObject p)
     {
         player = p;
@@ -14,6 +15,7 @@ public class ChoosePlayer : MonoBehaviour
 
     private void OnEnable()
     {
+        player.transform.parent = gameObject.transform;
         player.transform.position = transform.position;
         player.transform.localScale = new Vector3(40, 40, 40);
     }
