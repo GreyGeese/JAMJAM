@@ -110,11 +110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21967fe97cc59e447b6c5fb6d8cdd4ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damge: 25
   durabilityime: 4
   acceleration: 100
   maxSpeed: 4.9
   mask:
     serializedVersion: 2
-    m_Bits: 16
+    m_Bits: 64
   holderObject: {fileID: 0}

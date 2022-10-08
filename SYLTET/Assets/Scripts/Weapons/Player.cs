@@ -14,45 +14,55 @@ public class Player : MonoBehaviour
     [Header("weapon")]
     private Weapon weapon;
     private MovementSats movement;
-    private Vector2 input;
     [Header("Spawner")]
     [SerializeField] private Spawner spawner;
     Health health;
+    private float coolDown;
+    
     private void Start()
     {
         health = new Health(hearts, gameObject);
         movement = new MovementSats(acceleration, deceleration, maxSpeed, transform);
         weapon = gameObject.GetComponentInChildren<Weapon>();
+        spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
     }
 
     private void Update()
     {
-        transform.Translate(new Vector3(input.x, transform.position.y, 0) * Time.deltaTime);
-        if (weapon != null)Shoot();
+        coolDown -= Time.deltaTime;
+        //if (weapon != null)Shoot();
     }
     public void Controllers(InputAction.CallbackContext context)
     {
-        input = context.ReadValue<Vector2>();
-        Debug.Log(input);
+        //Vector2 input = context.ReadValue<Vector2>();
+        Vector2 input = hejKhaled(context.ReadValue<Vector2>());
+        
         //Vector2 input = Vector2.right * Input.GetAxisRaw("Horizontal");
         if (input.x > 0) transform.rotation = new Quaternion(0, 180, 0, 0); if(input.x < 0) transform.rotation = new Quaternion(0, 0, 0, 0);
-        //movement.Movement(input);
+        movement.Movement(input);
     }
 
-    public void Shoot()
+    public void Shoot(InputAction.CallbackContext context)
     {
-        if (Input.GetMouseButton(0))
+        
+            if(coolDown <= 0)
         {
             weapon.Shoot();
+            coolDown = 3;
         }
-        if (Input.GetMouseButtonUp(0))
-        {
+            
+        
             weapon.timer = 1;
-        }
+        
     }
     public void Death()
     {
         spawner.setStartRespawn(gameObject);
         health.Death();
+    }
+
+    public Vector3 hejKhaled(Vector3 input)
+    {
+        return new Vector3(input.x, 0, 0);
     }
 }

@@ -12,6 +12,7 @@ public class Jump : MonoBehaviour
     [SerializeField] LayerMask collisionMask;
     Rigidbody rb;
     [SerializeField] BoxCollider collid;
+    [SerializeField] private IsGrounded isa;
     bool grounded = true;
 
     void Awake()
@@ -19,18 +20,14 @@ public class Jump : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    private void FixedUpdate()
-    {
-        Collider[] hitColliders = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, collisionMask);
-        if (hitColliders.Length > 0) grounded = true;
-        
-    }
+   
+   
     // Update is called once per frame
     public void JumpInput(InputAction.CallbackContext context)
     {
-        Debug.Log("jump");
-        //if (grounded)
-       // {
+        
+        if(isa.isGrounded)
+        {
             //Source: https://www.youtube.com/watch?v=7KiK0Aqtmzc&t=514s
 
             rb.velocity = Vector3.up * JumpVelocity;
@@ -42,7 +39,7 @@ public class Jump : MonoBehaviour
             {
                 JumpUp(lowJumpMultiplier);
             }
-      //  }
+        }
     }
     void JumpUp(float hight)
     {
