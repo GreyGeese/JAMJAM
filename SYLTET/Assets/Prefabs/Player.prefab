@@ -741,6 +741,37 @@ Transform:
   m_Father: {fileID: 7000534134650050366}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6197023383834278983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5357357964152766128}
+  m_Layer: 6
+  m_Name: REposition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5357357964152766128
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6197023383834278983}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.62, y: 3.56, z: -1.99}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7185695142190325946}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6260963905765353414
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,6 +939,7 @@ Transform:
   - {fileID: 3452261339375812654}
   - {fileID: 19478542}
   - {fileID: 8738984181475338763}
+  - {fileID: 5357357964152766128}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -1055,6 +1087,7 @@ MonoBehaviour:
       m_Calls: []
   jumpCD: 0.8
   moveLeft: 0
+  audioManager: {fileID: 0}
   groundCheck: {fileID: 19478540}
 --- !u!54 &919132148266084367
 Rigidbody:
@@ -1117,6 +1150,7 @@ MonoBehaviour:
     m_Bits: 0
   collid: {fileID: 0}
   isa: {fileID: 19478540}
+  audioManager: {fileID: 0}
 --- !u!114 &3868776642878499474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1140,6 +1174,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 3bc1b5de0106a2b4f8e69d2727835d84, type: 2}
   - {fileID: 2100000, guid: cabbd8d97ced31c4dbf5599ee558d5d8, type: 2}
   audioManager: {fileID: 0}
+  rigidExplosion: {fileID: 8927772873166001941, guid: e8a9f464c77b2e444a8f74be619b054c, type: 3}
+  rigidExplosionPosiition: {fileID: 6197023383834278983}
 --- !u!1 &7725659391538534747
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class HandleRigidExplosion : MonoBehaviour
     }
     public void Destroy()
     {
+        
         Destroy(gameObject);
     }
 

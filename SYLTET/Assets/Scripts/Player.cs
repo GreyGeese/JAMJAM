@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
     ScoreManager scoreManager;
     PlayerSpawnManager playerSpawnManager;
     [SerializeField] private PlayerAudioManager audioManager;
+    [SerializeField] private GameObject rigidExplosion;
+    [SerializeField] private GameObject rigidExplosionPosiition;
     private void Start()
     {
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<PlayerAudioManager>();
@@ -69,6 +71,9 @@ public class Player : MonoBehaviour
     }
     public void Death()
     {
+        //rigidExplosion.shatterJar();
+       // rigidExplosion.transform.parent = null;
+        Instantiate(rigidExplosion, rigidExplosionPosiition.transform.position, Quaternion.identity);
         audioManager.playSoundswithKeyCode("destroyPlayer");
         spawner.setStartRespawn(gameObject);
         health.Death();
