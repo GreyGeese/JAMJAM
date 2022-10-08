@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     [Header("weapon")]
     private Weapon weapon;
     private MovementSats movement;
+    [Header("Spawner")]
+    [SerializeField] private Spawner spawner;
     Health health;
     private void Start()
     {
@@ -30,7 +32,6 @@ public class Player : MonoBehaviour
     void Controllers()
     {
         Vector2 input = Vector2.right * Input.GetAxisRaw("Horizontal");
-        //input = transform.rotation * input;
         if (input.x > 0) transform.rotation = new Quaternion(0, 180, 0, 0); if(input.x < 0) transform.rotation = new Quaternion(0, 0, 0, 0);
         movement.Movement(input);
     }
@@ -48,6 +49,7 @@ public class Player : MonoBehaviour
     }
     public void Death()
     {
+        spawner.setStartRespawn(gameObject);
         health.Death();
     }
 }

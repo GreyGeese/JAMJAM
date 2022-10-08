@@ -7,19 +7,27 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Transform trans;
     [SerializeField] private float respawnTime;
     GameObject player;
-    float timer;
-    public void setPlayer(GameObject p)
+    float timer = 0;
+    private bool startRespawn = false;
+    private void Update()
     {
-        player = p;
-        respawn(p);
+        if(startRespawn)  respawn(player);
     }
     private void respawn(GameObject p)
     {
+        player = p;
         timer += Time.deltaTime;
         if (timer >= respawnTime)
         {
-            Instantiate(p, trans);
+            p.transform.position = transform.position;
+            p.SetActive(true);
             timer = 0;
+            startRespawn = false;
         }
+    }
+    public void setStartRespawn(GameObject p)
+    {
+        startRespawn = true;
+        player = p;
     }
 }

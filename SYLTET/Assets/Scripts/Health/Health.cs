@@ -19,8 +19,9 @@ public class Health
         player.SetActive(false);
     }
 
-    public int getHearts()
+    public bool Isdead()
     {
-        return hearts;
+        if(hearts <= 0) return true;
+        return false;
     }
 }
