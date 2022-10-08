@@ -384,9 +384,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trans: {fileID: 177245057}
   respawnTime: 1
-  player: {fileID: 0}
-  timer: 0
-  startRespawn: 0
 --- !u!4 &205305097 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 621970390618467528, guid: 54f1c99b4f7ed2448b362515cf14a35c, type: 3}
@@ -2598,16 +2595,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb1a0144445d03489ab6d89b0b4f51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
-  deadline: 330
+  deadline: 10
   panel: {fileID: 272877936}
-  finished: 0
   canvas: {fileID: 993671542}
   camera: {fileID: 963194227}
   showPlayer: {fileID: 1603903737}
   scoreManager: {fileID: 1806393607}
-  temp: 0
-  t: {fileID: 0}
 --- !u!1 &1026548383 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2128656935991939394, guid: 1f2a5d2b21cceed43b21bdf98636250d, type: 3}
