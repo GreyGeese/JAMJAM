@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
         Vector2 input = hejKhaled(context.ReadValue<Vector2>());
         
         //Vector2 input = Vector2.right * Input.GetAxisRaw("Horizontal");
-        if (input.x > 0) transform.rotation = new Quaternion(0, 180, 0, 0); if(input.x < 0) transform.rotation = new Quaternion(0, 0, 0, 0);
+        //if (input.x > 0) transform.rotation = new Quaternion(0, 180, 0, 0); if(input.x < 0) transform.rotation = new Quaternion(0, 0, 0, 0);
         movement.Movement(input);
     }
 
