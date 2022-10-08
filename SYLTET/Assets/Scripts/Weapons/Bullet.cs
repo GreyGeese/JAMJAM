@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private int damge = 25;
     [SerializeField] private float durabilityime = 4;
     [SerializeField] private float acceleration = 100;
     [SerializeField] private float maxSpeed = 15f;
@@ -18,7 +17,7 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         ConstructSpeed();
-        gameObject.transform.localScale = new Vector2(1, 20 / maxSpeed);
+        //gameObject.transform.localScale = new Vector2(1, 20 / maxSpeed);
     }
 
     // Update is called once per frame
@@ -48,9 +47,10 @@ public class Bullet : MonoBehaviour
         stats = new MovementSats(acceleration, maxSpeed, transform);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
-        bulletStats = new BulletStats(damge, other.gameObject);
+        Debug.Log("träff");
+        bulletStats = new BulletStats(other.gameObject);
         if ((mask & 1 << other.gameObject.layer) != 1 << other.gameObject.layer) return;
         bulletStats.AttackGameObject();
         Destroy(gameObject);
@@ -58,9 +58,5 @@ public class Bullet : MonoBehaviour
     public void setHolderObject(GameObject _gameObject)
     {
         holderObject = _gameObject;
-    }
-    public void setTargetMask()
-    {
-
     }
 }

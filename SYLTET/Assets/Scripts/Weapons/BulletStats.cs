@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class BulletStats
 {
-    [SerializeField] private int damge = 25;
     [SerializeField] private GameObject target;
 
 
-    public BulletStats(int damge, GameObject target)
+    public BulletStats(GameObject target)
     {
-        this.damge = damge;
         this.target = target;
     }
     public void AttackGameObject()
     {
+        Debug.Log("trff");
         switch (target.tag)
         {
             case "Player":
-                target.GetComponent<Player>(); //.GetHurt(damge);
+                Debug.Log("trff");
+                target.GetComponent<Player>().Death();
                 break;
             default: return;
         }
