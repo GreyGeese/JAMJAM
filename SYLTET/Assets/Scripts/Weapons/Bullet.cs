@@ -49,7 +49,6 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject);
         bulletStats = new BulletStats(other.gameObject);
         if ((mask & 1 << other.gameObject.layer) != 1 << other.gameObject.layer) return;
         bulletStats.AttackGameObject();
