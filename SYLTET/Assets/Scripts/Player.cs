@@ -33,6 +33,11 @@ public class Player : MonoBehaviour
     }
     public void Death()
     {
+
+        
+
         health.Death();
     }
+
+   
 }

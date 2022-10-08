@@ -9,7 +9,7 @@ public class RigidExplosion : MonoBehaviour
 
     public void shatterJar()
     {
-        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        gameObject.GetComponent<BoxCollider>().enabled = false;
         jamCharacter.SetActive(false);
         brokenJamCharacter.SetActive(true);
         brokenJamCharacter.GetComponent<HandleRigidExplosion>().explode();
