@@ -37,7 +37,7 @@ public class PlayerSpawnManager : MonoBehaviour
     //Metoden anv�nds av inputsystemet f�r att spawna in en spelare n�r den tar emot input fr�n spelarens handkontroller/tangentbord
     public void OnPlayerJoined(PlayerInput playerInput)
     {
-
+        Debug.Log("hej");
         int randy = Random.Range(-50, -1);
        // playerInput.gameObject.transform.position = new Vector3(randy, -1, -1);
 
