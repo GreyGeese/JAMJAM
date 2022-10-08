@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IsGrounded : MonoBehaviour
 {
-    public bool isGrounded;
+    public bool isGrounded = false;
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag.Equals("ground"))

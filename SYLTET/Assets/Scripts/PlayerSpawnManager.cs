@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class PlayerSpawnManager : MonoBehaviour
 {
 
-    [SerializeField] private Transform playerOneSpawnPoint;
+    [SerializeField] private Transform[] playerOneSpawnPoint;
    
     
 
@@ -18,11 +18,11 @@ public class PlayerSpawnManager : MonoBehaviour
     public void OnPlayerJoined(PlayerInput playerInput)
     {
        
-        int randy = Random.Range(-50, -1);
+        int randy = Random.Range(0, playerOneSpawnPoint.Length);
 
         
         
-        playerInput.gameObject.transform.position = playerOneSpawnPoint.transform.position;
+        playerInput.gameObject.transform.position = playerOneSpawnPoint[randy].transform.position;
         
     }
 }

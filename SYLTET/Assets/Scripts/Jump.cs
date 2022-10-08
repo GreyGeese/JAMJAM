@@ -14,6 +14,7 @@ public class Jump : MonoBehaviour
     [SerializeField] BoxCollider collid;
     [SerializeField] private IsGrounded isa;
     [SerializeField] private PlayerAudioManager audioManager;
+    [SerializeField] private int jumpForce = 10;
     bool grounded = true;
 
     PlayerController pc;
@@ -34,8 +35,8 @@ public class Jump : MonoBehaviour
         {
             //Source: https://www.youtube.com/watch?v=7KiK0Aqtmzc&t=514s
             audioManager.playSoundswithKeyCode("jumpSound");
-            rb.AddForce(5,200,0);
-            
+
+            rb.velocity = new Vector3(rb.velocity.x, jumpForce ,0);
             if (rb.velocity.y < 0)
             {
                 JumpUp(fallMultiplier);

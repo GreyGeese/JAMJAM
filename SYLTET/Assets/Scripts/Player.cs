@@ -24,11 +24,14 @@ public class Player : MonoBehaviour
     ScoreManager scoreManager;
     PlayerSpawnManager playerSpawnManager;
     [SerializeField] private PlayerAudioManager audioManager;
+    [SerializeField] private GameObject rigidExplosion;
+    [SerializeField] private GameObject rigidExplosionPosiition;
     private void Start()
     {
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<PlayerAudioManager>();
         scoreManager = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>();
         gameObject.GetComponentInChildren<Renderer>().material = materialList[amountOfPlayersSpawned];
+        
         scoreManager.AddPlayer(gameObject,amountOfPlayersSpawned);
         amountOfPlayersSpawned++;
         health = new Health(hearts, gameObject);
@@ -69,6 +72,7 @@ public class Player : MonoBehaviour
     }
     public void Death()
     {
+        Instantiate(rigidExplosion, rigidExplosionPosiition.transform.position, Quaternion.identity);
         audioManager.playSoundswithKeyCode("destroyPlayer");
         spawner.setStartRespawn(gameObject);
         health.Death();
