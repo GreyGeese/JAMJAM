@@ -39,9 +39,9 @@ public class PlayerSpawnManager : MonoBehaviour
     {
 
         int randy = Random.Range(-50, -1);
-        playerInput.gameObject.transform.position = new Vector3(randy, -1, -1);
+       // playerInput.gameObject.transform.position = new Vector3(randy, -1, -1);
 
-       // playerInput.gameObject.transform.position = playerOneSpawnPoint.transform.position;
+        playerInput.gameObject.transform.position = playerOneSpawnPoint.transform.position;
     }
 
    

@@ -18,7 +18,7 @@ public class IsGrounded : MonoBehaviour
         if (collision.gameObject.tag.Equals("ground"))
         {
             isGrounded = true;
-            Debug.Log(isGrounded);
+          
         }
     }
     private void OnTriggerExit(Collider collision)

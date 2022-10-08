@@ -30,7 +30,9 @@ public class PlayerController : MonoBehaviour
        
         timer += Time.deltaTime;
     }
-    public void OnMove(InputAction.CallbackContext ctx) => moveInp = ctx.ReadValue<Vector2>();
+    public void OnMove(InputAction.CallbackContext ctx) { 
+        moveInp = ctx.ReadValue<Vector2>(); 
+    }
 
     public void OnJump(InputAction.CallbackContext context)
     {

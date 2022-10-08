@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Jump : MonoBehaviour
 {
@@ -22,14 +23,14 @@ public class Jump : MonoBehaviour
     {
         Collider[] hitColliders = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, collisionMask);
         if (hitColliders.Length > 0) grounded = true;
-        JumpInput();
+        
     }
     // Update is called once per frame
-    void JumpInput()
+    public void JumpInput(InputAction.CallbackContext context)
     {
-
-        if (Input.GetKeyDown(KeyCode.W) && grounded)
-        {
+        Debug.Log("jump");
+        //if (grounded)
+       // {
             //Source: https://www.youtube.com/watch?v=7KiK0Aqtmzc&t=514s
 
             rb.velocity = Vector3.up * JumpVelocity;
@@ -41,7 +42,7 @@ public class Jump : MonoBehaviour
             {
                 JumpUp(lowJumpMultiplier);
             }
-        }
+      //  }
     }
     void JumpUp(float hight)
     {

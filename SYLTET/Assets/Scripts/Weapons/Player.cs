@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
-
+using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     [Header("Movment")]
@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     [Header("weapon")]
     private Weapon weapon;
     private MovementSats movement;
+    private Vector2 input;
     [Header("Spawner")]
     [SerializeField] private Spawner spawner;
     Health health;
@@ -26,14 +27,16 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        Controllers();
+        transform.Translate(new Vector3(input.x, transform.position.y, 0) * Time.deltaTime);
         if (weapon != null)Shoot();
     }
-    void Controllers()
+    public void Controllers(InputAction.CallbackContext context)
     {
-        Vector2 input = Vector2.right * Input.GetAxisRaw("Horizontal");
+        input = context.ReadValue<Vector2>();
+        Debug.Log(input);
+        //Vector2 input = Vector2.right * Input.GetAxisRaw("Horizontal");
         if (input.x > 0) transform.rotation = new Quaternion(0, 180, 0, 0); if(input.x < 0) transform.rotation = new Quaternion(0, 0, 0, 0);
-        movement.Movement(input);
+        //movement.Movement(input);
     }
 
     public void Shoot()
