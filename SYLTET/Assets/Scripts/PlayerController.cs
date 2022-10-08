@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 5;
     private Vector2 moveInp;
     private int jump = 0;
-    private Rigidbody rB;
+    [SerializeField] Rigidbody rB;
     public int jumpForce;
     public UnityEvent FireEvent;
     public UnityEvent JumpEvent;
@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private float timer = 1;
     public bool moveLeft = false;
     private AnimationManager animManager;
+
 
     [SerializeField] private PlayerAudioManager audioManager;
     [SerializeField] private IsGrounded groundCheck;
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour
 
         if (moveInp.x == 0)
         {
+            rB.velocity = new Vector3(0, rB.velocity.y, 0);
             animManager.SetBoolTrue("Idle");
             animManager.SetBoolFalse("Run");
         }
@@ -59,6 +61,7 @@ public class PlayerController : MonoBehaviour
 
         if(moveInp.x > 0 && moveLeft)
         {
+            
             audioManager.playSoundswithKeyCode("weehoo");
             //animManager.SetTrigger("Turn");
             transform.rotation = Quaternion.Euler(0, 90, 0);
@@ -67,10 +70,19 @@ public class PlayerController : MonoBehaviour
         
         if(moveInp.x < 0 && !moveLeft)
         {
+            
             audioManager.playSoundswithKeyCode("weehoo");
             //animManager.SetTrigger("Turn");
             transform.rotation = Quaternion.Euler(0, -90, 0);
             moveLeft = true;
+        }
+        if (moveInp.x > 0)
+        {
+            rB.velocity = new Vector3(speed, rB.velocity.y, 0);
+        }
+        if (moveInp.x < 0)
+        {
+            rB.velocity = new Vector3(-speed, rB.velocity.y, 0);
         }
 
 
@@ -79,6 +91,7 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext ctx)
     {
         moveInp = ctx.ReadValue<Vector2>();
+        Debug.Log(moveInp);
     }
 
     public void OnJump(InputAction.CallbackContext context)

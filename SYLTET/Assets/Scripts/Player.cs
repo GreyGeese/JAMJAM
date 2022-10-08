@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<PlayerAudioManager>();
         scoreManager = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>();
         gameObject.GetComponentInChildren<Renderer>().material = materialList[amountOfPlayersSpawned];
-        rigidExplosion.GetComponentInChildren<Renderer>().material = materialList[amountOfPlayersSpawned];
+        
         scoreManager.AddPlayer(gameObject,amountOfPlayersSpawned);
         amountOfPlayersSpawned++;
         health = new Health(hearts, gameObject);
@@ -72,8 +72,6 @@ public class Player : MonoBehaviour
     }
     public void Death()
     {
-        //rigidExplosion.shatterJar();
-       // rigidExplosion.transform.parent = null;
         Instantiate(rigidExplosion, rigidExplosionPosiition.transform.position, Quaternion.identity);
         audioManager.playSoundswithKeyCode("destroyPlayer");
         spawner.setStartRespawn(gameObject);
