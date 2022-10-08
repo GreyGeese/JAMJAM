@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ground
   - Spawner
+  - ScoreManager
   layers:
   - Default
   - TransparentFX
