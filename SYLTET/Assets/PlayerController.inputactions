@@ -42,13 +42,22 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "db14c748-a2ca-4e79-a999-8d6063ee1146",
-                    "expectedControlType": "Button",
+                    "name": "RotateLeft",
+                    "type": "Value",
+                    "id": "bfcdbe68-f505-485a-8ccb-e611dc61151e",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RotateRight",
+                    "type": "Value",
+                    "id": "e57ddcd9-63f7-4412-801e-14288435c3a5",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -98,12 +107,23 @@
                 },
                 {
                     "name": "",
-                    "id": "46dea571-26b1-4069-a03e-3fb5cfcbe1a0",
-                    "path": "",
+                    "id": "c66ffedf-0f15-4f32-a4b8-d19de6d49085",
+                    "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "RotateLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ab708ccd-ff32-40c2-bcfb-44db7ae3c85a",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
