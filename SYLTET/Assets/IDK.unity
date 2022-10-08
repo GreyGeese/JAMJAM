@@ -371,7 +371,7 @@ MonoBehaviour:
   deceleration: 60
   maxSpeed: 10
   hearts: 1
-  spawner: {fileID: 0}
+  spawner: {fileID: 909368394}
 --- !u!54 &922031197
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -522,7 +522,7 @@ MonoBehaviour:
   deceleration: 60
   maxSpeed: 10
   hearts: 1
-  spawner: {fileID: 0}
+  spawner: {fileID: 909368394}
 --- !u!54 &1130841261
 Rigidbody:
   m_ObjectHideFlags: 0
