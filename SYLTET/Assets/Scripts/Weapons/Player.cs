@@ -21,10 +21,13 @@ public class Player : MonoBehaviour
     private int score;
     private static int amountOfPlayersSpawned;
     [SerializeField] private Material[] materialList;
+    ScoreManager scoreManager;
     PlayerSpawnManager playerSpawnManager;
     private void Start()
     {
+        scoreManager = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>();
         gameObject.GetComponentInChildren<Renderer>().material = materialList[amountOfPlayersSpawned];
+        scoreManager.AddPlayer(gameObject,amountOfPlayersSpawned);
         amountOfPlayersSpawned++;
         health = new Health(hearts, gameObject);
         movement = new MovementSats(acceleration, deceleration, maxSpeed, transform);
