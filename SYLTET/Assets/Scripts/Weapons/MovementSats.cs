@@ -43,10 +43,6 @@ public class MovementSats
         {
             velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
         }
-        if (velocity.y > velocity.normalized.y * maxSpeed || velocity.y < velocity.normalized.y * maxSpeed)
-        {
-            velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
-        }
 
     }
 
@@ -55,10 +51,6 @@ public class MovementSats
         if (deceleration / 100 > Mathf.Abs(velocity.x))
         {
             velocity.x = Vector2.zero.x;
-        }
-        if (deceleration / 100 > Mathf.Abs(velocity.y))
-        {
-            velocity.y = Vector2.zero.y;
         }
         Vector3 projection = new Vector2(velocity.x, velocity.y).normalized;
         velocity -= projection * deceleration * Time.deltaTime;
