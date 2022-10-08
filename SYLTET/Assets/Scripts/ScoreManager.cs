@@ -6,7 +6,7 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI[] textMesh = new TextMeshProUGUI[4];
-    [SerializeField] GameObject[] players = new GameObject[4];
+    [SerializeField] public GameObject[] players = new GameObject[4];
      
     public void AddPlayer(GameObject player, int playerCount)
     {
