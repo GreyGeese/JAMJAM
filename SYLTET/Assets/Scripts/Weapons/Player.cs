@@ -19,15 +19,19 @@ public class Player : MonoBehaviour
     Health health;
     private float coolDown;
     private int score;
-
+    private static int amountOfPlayersSpawned;
+    [SerializeField] private Material[] materialList;
+    PlayerSpawnManager playerSpawnManager;
     private void Start()
     {
+        gameObject.GetComponentInChildren<Renderer>().material = materialList[amountOfPlayersSpawned];
+        amountOfPlayersSpawned++;
         health = new Health(hearts, gameObject);
         movement = new MovementSats(acceleration, deceleration, maxSpeed, transform);
         weapon = gameObject.GetComponentInChildren<Weapon>();
         spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
     }
-
+    
     private void Update()
     {
         coolDown -= Time.deltaTime;
