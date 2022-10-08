@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BulletStats
 {
-    [SerializeField] private int damge = 25;
     [SerializeField] private GameObject target;
 
 
