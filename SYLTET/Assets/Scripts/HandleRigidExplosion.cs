@@ -7,13 +7,13 @@ public class HandleRigidExplosion : MonoBehaviour
 
     public void explode()
     {
-        movementDirection = new Vector3(70f, 70f, 0f);
-        GetComponentInChildren<Rigidbody2D>().AddForce(movementDirection * speed, ForceMode2D.Impulse);  // Impulse använder massan
+        movementDirection = new Vector3(70f, 70f, 70f);
+        GetComponentInChildren<Rigidbody>().AddForce(movementDirection * speed, ForceMode.Impulse);  // Impulse använder massan
     }
     public void Destroy()
     {
         Destroy(gameObject);
     }
 
-
+   
 }

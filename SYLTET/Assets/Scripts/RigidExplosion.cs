@@ -3,17 +3,17 @@ using UnityEngine;
 public class RigidExplosion : MonoBehaviour
 {
 
-    [SerializeField] GameObject wall;
-    [SerializeField] GameObject wallBroken;
+    [SerializeField] GameObject jamCharacter;
+    [SerializeField] GameObject brokenJamCharacter;
 
 
-    public void breakWall()
+    public void shatterJar()
     {
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        wall.SetActive(false);
-        wallBroken.SetActive(true);
-        //wallBroken.GetComponent<HandelBrokenWall>().explode();
-        //wallBroken.GetComponent<HandelBrokenWall>().Invoke("Destroy", 5f);
+        jamCharacter.SetActive(false);
+        brokenJamCharacter.SetActive(true);
+        brokenJamCharacter.GetComponent<HandleRigidExplosion>().explode();
+        brokenJamCharacter.GetComponent<HandleRigidExplosion>().Invoke("Destroy", 5f);
 
     }
 
