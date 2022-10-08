@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private int damge = 25;
     [SerializeField] private float durabilityime = 4;
     [SerializeField] private float acceleration = 100;
     [SerializeField] private float maxSpeed = 15f;
@@ -50,7 +49,6 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject);
         bulletStats = new BulletStats(other.gameObject);
         if ((mask & 1 << other.gameObject.layer) != 1 << other.gameObject.layer) return;
         bulletStats.AttackGameObject();
