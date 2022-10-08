@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private int damge = 25;
     [SerializeField] private float durabilityime = 4;
     [SerializeField] private float acceleration = 100;
     [SerializeField] private float maxSpeed = 15f;
