@@ -14,7 +14,6 @@ public class ChoosePlayer : MonoBehaviour
 
     private void OnEnable()
     {
-        gameObject.transform.SetParent(player.transform);
         player.transform.position = transform.position;
         player.transform.localScale = new Vector3(40, 40, 40);
     }
