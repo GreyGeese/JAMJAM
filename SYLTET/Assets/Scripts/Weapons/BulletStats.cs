@@ -8,9 +8,8 @@ public class BulletStats
     [SerializeField] private GameObject target;
 
 
-    public BulletStats(int damge, GameObject target)
+    public BulletStats(GameObject target)
     {
-        this.damge = damge;
         this.target = target;
     }
     public void AttackGameObject()
@@ -18,7 +17,7 @@ public class BulletStats
         switch (target.tag)
         {
             case "Player":
-                target.GetComponent<Player>(); //.GetHurt(damge);
+                target.GetComponent<Player>().Death();
                 break;
             default: return;
         }

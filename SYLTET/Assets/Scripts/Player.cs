@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Health")]
+    [SerializeField] private int hearts = 1;
+    [Header("weapon")]
     private Weapon weapon;
+    Health health;
     private void Start()
     {
+        health = new Health(hearts, gameObject);
         weapon = gameObject.GetComponentInChildren<Weapon>();
     }
 
     private void Update()
     {
-        Shoot();
+        if(weapon != null)Shoot();
     }
+    
     public void Shoot()
     {
         if (Input.GetMouseButton(0))
@@ -24,5 +30,9 @@ public class Player : MonoBehaviour
         {
             weapon.timer = 1;
         }
+    }
+    public void Death()
+    {
+        health.Death();
     }
 }

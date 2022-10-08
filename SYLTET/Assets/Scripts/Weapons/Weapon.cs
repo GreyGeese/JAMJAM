@@ -15,9 +15,6 @@ public class Weapon : MonoBehaviour
         timer += Time.deltaTime;
         if(timer > attackSpeed / 10)
         {
-            ShootEvent shoot = new ShootEvent();
-            shoot.holder = transform.parent.gameObject;
-            shoot.FireEvent();
             Transform bulletTransform = Instantiate(bullet, bulletsSpawnPoint.position, Quaternion.identity);
             Vector3 shootDirection = (transform.position - bulletTransform.position).normalized;
             shootDirection.z = 0;
