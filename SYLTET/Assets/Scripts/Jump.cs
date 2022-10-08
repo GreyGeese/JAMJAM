@@ -13,11 +13,15 @@ public class Jump : MonoBehaviour
     Rigidbody rb;
     [SerializeField] BoxCollider collid;
     [SerializeField] private IsGrounded isa;
+    [SerializeField] private PlayerAudioManager audioManager;
     bool grounded = true;
 
+    PlayerController pc;
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<PlayerAudioManager>();
+        
     }
 
    
@@ -29,8 +33,9 @@ public class Jump : MonoBehaviour
         if(isa.isGrounded)
         {
             //Source: https://www.youtube.com/watch?v=7KiK0Aqtmzc&t=514s
-
-            rb.velocity = Vector3.up * JumpVelocity;
+            audioManager.playSoundswithKeyCode("jumpSound");
+            rb.AddForce(5,200,0);
+            
             if (rb.velocity.y < 0)
             {
                 JumpUp(fallMultiplier);
