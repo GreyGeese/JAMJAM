@@ -80,8 +80,9 @@ public class Player : MonoBehaviour
     {
         Instantiate(rigidExplosion, rigidExplosionPosiition.transform.position, Quaternion.identity);
         audioManager.playSoundswithKeyCode("destroyPlayer");
-        spawner.respawn(gameObject);
         health.Death();
+        spawner.respawn(gameObject);
+        
     }
 
     public Vector3 hejKhaled(Vector3 input)

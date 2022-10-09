@@ -6,21 +6,31 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private Transform trans;
     [SerializeField] private float respawnTime;
-    GameObject player;
+    [SerializeField] PlayerSpawnManager playerSpawnManager;
+    private Transform[] points;
+    private int index = 0;
     float timer = 0;
     private bool startRespawn = false;
-   
+
+    private void Start()
+    {
+        points = playerSpawnManager.getPlayerSpawnPoints();
+    }
+
     public void respawn(GameObject p)
     {
-        player = p;
-        timer += Time.deltaTime;
-        //if (timer >= respawnTime)
-        //{
-            p.transform.position = transform.position;
+        print(index);
+        if (index >= points.Length)  
+            index = 0;
+        
+        //timer += Time.deltaTime;
+
+        p.transform.position = points[index].position;
             p.SetActive(true);
-            timer = 0;
+            //timer = 0;
             startRespawn = false;
-        //}
+        index++;
     }
-    
+
+
 }

@@ -31,4 +31,9 @@ public class PlayerSpawnManager : MonoBehaviour
         
         
     }
+
+    public Transform[] getPlayerSpawnPoints()
+    {
+        return playerOneSpawnPoint;
+    }
 }
