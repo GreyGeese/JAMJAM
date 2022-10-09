@@ -8,7 +8,6 @@ public class CameraShakeTrigger_Cinemachine : MonoBehaviour
 
 
 
-
     public static CameraShakeTrigger_Cinemachine Instance
     {
         get; private set;
