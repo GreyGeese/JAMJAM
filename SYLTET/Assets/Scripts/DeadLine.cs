@@ -18,6 +18,7 @@ public class DeadLine : MonoBehaviour
     void Update()
     {
         RunGame();
+        
     }
     private void RunGame()
     {
@@ -38,20 +39,23 @@ public class DeadLine : MonoBehaviour
             }
         }
     }
-    int temp = 0;
-    GameObject t;
+    int temp = 100;
+    GameObject winner;
     public GameObject TheChoosenPlayer()
     {
-        for (int i = 0; i < scoreManager.players.Length; i++)
+
+        for(int i = 0; i < 3; i++)
         {
-            if(scoreManager.players[i] != null)
+            if (scoreManager.players[i] == null) return winner;
+            if(scoreManager.players[i].GetComponent<Player>().GetScore() < temp )
             {
-                if (scoreManager.players[i].GetComponent<Player>().GetScore() >= temp) 
-                    temp = scoreManager.players[i].GetComponent<Player>().GetScore();
-                    t = scoreManager.players[i];
+                temp = scoreManager.players[i].GetComponent<Player>().GetScore();
+                winner = scoreManager.players[i];
             }
         }
-        if (t != null) return t;
-        return null;
+
+        return winner;
+        
+        
     }
 }

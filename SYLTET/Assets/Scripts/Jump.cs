@@ -39,16 +39,17 @@ public class Jump : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, jumpForce ,0);
             if (rb.velocity.y < 0)
             {
-                JumpUp(fallMultiplier);
+                //JumpUp(fallMultiplier);
             }
             else if (rb.velocity.y > 0)
             {
-                JumpUp(lowJumpMultiplier);
+                //JumpUp(lowJumpMultiplier);
             }
         }
     }
+    /*
     void JumpUp(float hight)
     {
         rb.velocity += Vector3.up * Physics2D.gravity.y * (hight - 1) * JumpVelocity * Time.deltaTime;
-    }
+    }*/
 }

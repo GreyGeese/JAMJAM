@@ -35,7 +35,11 @@ public class Player : MonoBehaviour
         gameObject.GetComponentInChildren<Renderer>().material = materialList[amountOfPlayersSpawned];
         
         scoreManager.AddPlayer(gameObject,amountOfPlayersSpawned);
-        amountOfPlayersSpawned++;
+        if(amountOfPlayersSpawned < 4)
+        {
+            amountOfPlayersSpawned++;
+        }
+        
         health = new Health(hearts, gameObject);
         movement = new MovementSats(acceleration, deceleration, maxSpeed, transform);
         weapon = gameObject.GetComponentInChildren<Weapon>();
@@ -76,8 +80,9 @@ public class Player : MonoBehaviour
     {
         Instantiate(rigidExplosion, rigidExplosionPosiition.transform.position, Quaternion.identity);
         audioManager.playSoundswithKeyCode("destroyPlayer");
-        spawner.setStartRespawn(gameObject);
         health.Death();
+        spawner.respawn(gameObject);
+        
     }
 
     public Vector3 hejKhaled(Vector3 input)
@@ -96,6 +101,9 @@ public class Player : MonoBehaviour
         Debug.Log(score);
     }
     
-
+    public void SetAmountOfPlayersSpawned(int aops)
+    {
+        amountOfPlayersSpawned = aops;
+    }
 
 }

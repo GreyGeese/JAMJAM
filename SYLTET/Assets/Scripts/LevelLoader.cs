@@ -11,9 +11,10 @@ public class LevelLoader : MonoBehaviour
     public int levelToLoad = 1;
     public bool doStartTransition = true;
     float timer;
-
+    Player player;
     private void Start()
     {
+        
         anim = GetComponent<Animator>();
         if (doStartTransition) anim.SetTrigger("FadeOnStart");
         timer = 0;
@@ -26,7 +27,17 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadLevel()
     {
+        
+       
         StartCoroutine(LoadSceneAfterFade());
+        
+    }
+    public void ReplayLevel()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        
+           player.SetAmountOfPlayersSpawned(0);
+        
     }
 
     public void ReloadScene()

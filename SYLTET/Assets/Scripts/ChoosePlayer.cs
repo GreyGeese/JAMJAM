@@ -18,6 +18,8 @@ public class ChoosePlayer : MonoBehaviour
         player.transform.parent = gameObject.transform;
         player.transform.position = transform.position;
         player.transform.localScale = new Vector3(40, 40, 40);
+        player.GetComponent<Rigidbody>().useGravity = false;
+        
     }
 
     // Update is called once per frame
