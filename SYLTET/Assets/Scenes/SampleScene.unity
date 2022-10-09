@@ -348,6 +348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trans: {fileID: 177245057}
   respawnTime: 1
+  playerSpawnManager: {fileID: 0}
 --- !u!4 &205305097 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 621970390618467528, guid: 54f1c99b4f7ed2448b362515cf14a35c, type: 3}
@@ -1944,12 +1945,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb1a0144445d03489ab6d89b0b4f51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
   deadline: 10
   panel: {fileID: 272877936}
+  finished: 0
   canvas: {fileID: 993671542}
   camera: {fileID: 963194227}
   showPlayer: {fileID: 1603903737}
   scoreManager: {fileID: 1806393607}
+  temp: 0
+  t: {fileID: 0}
 --- !u!1001 &1093879399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2943,6 +2948,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 192968480635826386, guid: f20b5bb7c844d6a42920ce372f3475dd, type: 3}
+      propertyPath: m_Intensity
+      value: 2098.947
+      objectReference: {fileID: 0}
+    - target: {fileID: 192968480635826386, guid: f20b5bb7c844d6a42920ce372f3475dd, type: 3}
+      propertyPath: m_LightUnit
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1859851466375274940, guid: f20b5bb7c844d6a42920ce372f3475dd, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2987,9 +3000,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4206107729031732021, guid: f20b5bb7c844d6a42920ce372f3475dd, type: 3}
+      propertyPath: m_Intensity
+      value: 2098.947
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206107729031732021, guid: f20b5bb7c844d6a42920ce372f3475dd, type: 3}
+      propertyPath: m_LightUnit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424577560516230757, guid: f20b5bb7c844d6a42920ce372f3475dd, type: 3}
+      propertyPath: m_Intensity
+      value: 3429.2327
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750299409290596818, guid: f20b5bb7c844d6a42920ce372f3475dd, type: 3}
+      propertyPath: m_Intensity
+      value: 2098.947
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750299409290596818, guid: f20b5bb7c844d6a42920ce372f3475dd, type: 3}
+      propertyPath: m_LightUnit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750299409290596819, guid: f20b5bb7c844d6a42920ce372f3475dd, type: 3}
+      propertyPath: m_Intensity
+      value: 3429.2327
+      objectReference: {fileID: 0}
     - target: {fileID: 6974946039396477625, guid: f20b5bb7c844d6a42920ce372f3475dd, type: 3}
       propertyPath: m_Name
       value: StageUpdated
+      objectReference: {fileID: 0}
+    - target: {fileID: 8366521836403069251, guid: f20b5bb7c844d6a42920ce372f3475dd, type: 3}
+      propertyPath: m_Intensity
+      value: 3429.2327
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f20b5bb7c844d6a42920ce372f3475dd, type: 3}
