@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerSpawnManager : MonoBehaviour
 {
-
+    private int amountOfPlayers;
     [SerializeField] private Transform[] playerOneSpawnPoint;
    
     
@@ -19,10 +19,16 @@ public class PlayerSpawnManager : MonoBehaviour
     {
        
         int randy = Random.Range(0, playerOneSpawnPoint.Length);
+        int i = 0;
 
         
+        if(amountOfPlayers < 4)
+        {
+            Debug.Log("hur många spelare" + i++);
+            playerInput.gameObject.transform.position = playerOneSpawnPoint[randy].transform.position;
+            amountOfPlayers++;
+        }
         
-        playerInput.gameObject.transform.position = playerOneSpawnPoint[randy].transform.position;
         
     }
 }

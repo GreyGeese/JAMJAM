@@ -9,25 +9,18 @@ public class Spawner : MonoBehaviour
     GameObject player;
     float timer = 0;
     private bool startRespawn = false;
-    private void Update()
-    {
-        if(startRespawn)  respawn(player);
-    }
-    private void respawn(GameObject p)
+   
+    public void respawn(GameObject p)
     {
         player = p;
         timer += Time.deltaTime;
-        if (timer >= respawnTime)
-        {
+        //if (timer >= respawnTime)
+        //{
             p.transform.position = transform.position;
             p.SetActive(true);
             timer = 0;
             startRespawn = false;
-        }
+        //}
     }
-    public void setStartRespawn(GameObject p)
-    {
-        startRespawn = true;
-        player = p;
-    }
+    
 }
