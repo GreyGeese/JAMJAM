@@ -33,7 +33,9 @@ public class Player : MonoBehaviour
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<PlayerAudioManager>();
         scoreManager = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>();
         gameObject.GetComponentInChildren<Renderer>().material = materialList[amountOfPlayersSpawned];
-        
+
+        amountOfPlayersSpawned = 0;
+
         scoreManager.AddPlayer(gameObject,amountOfPlayersSpawned);
         amountOfPlayersSpawned++;
         health = new Health(hearts, gameObject);
