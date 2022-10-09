@@ -10,16 +10,28 @@ public class LevelLoader : MonoBehaviour
     Animator anim;
     public int levelToLoad = 1;
     public bool doStartTransition = true;
+    float timer;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
         if (doStartTransition) anim.SetTrigger("FadeOnStart");
+        timer = 0;
+    }
+
+    private void Update()
+    {
+        timer += Time.deltaTime;
     }
 
     public void LoadLevel()
     {
         StartCoroutine(LoadSceneAfterFade());
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     IEnumerator LoadSceneAfterFade()
