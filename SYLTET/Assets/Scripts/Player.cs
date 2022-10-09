@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerAudioManager audioManager;
     [SerializeField] private GameObject rigidExplosion;
     [SerializeField] private GameObject rigidExplosionPosiition;
+    [SerializeField] private float IntensityShake = 1f;
+    [SerializeField] private float IntensityTime = 0.2f;
 
     public float timeBetweenShots = 0.5f;
     private void Start()
@@ -80,6 +82,7 @@ public class Player : MonoBehaviour
     {
         Instantiate(rigidExplosion, rigidExplosionPosiition.transform.position, Quaternion.identity);
         audioManager.playSoundswithKeyCode("destroyPlayer");
+        CameraShakeTrigger_Cinemachine.Instance.ShakeCamera(IntensityShake, IntensityTime);
         health.Death();
         spawner.respawn(gameObject);
         
