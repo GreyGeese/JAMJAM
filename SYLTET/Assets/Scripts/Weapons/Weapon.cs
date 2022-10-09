@@ -15,7 +15,7 @@ public class Weapon : MonoBehaviour
         timer += Time.deltaTime;
         if(timer > attackSpeed / 10)
         {
-            Transform bulletTransform = Instantiate(bullet, bulletsSpawnPoint.position, Quaternion.identity);
+            Transform bulletTransform = Instantiate(bullet, bulletsSpawnPoint.position, transform.rotation);
             Vector3 shootDirection = (transform.position - bulletTransform.position).normalized;
             shootDirection.z = 0;
             bulletTransform.GetComponent<Bullet>().Setup(-shootDirection);

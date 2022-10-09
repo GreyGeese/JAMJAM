@@ -610,7 +610,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5883358176928862044}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -1117,8 +1117,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.4845567, y: 5.957111, z: 0.0669734}
-  m_Center: {x: 0.13483524, y: 2.9088256, z: -0.28448159}
+  m_Size: {x: 5.4845567, y: 5.957111, z: 0.7021686}
+  m_Center: {x: 0.13483524, y: 2.9088256, z: -0.2799228}
 --- !u!114 &9221875102933654227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1335,6 +1335,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: e29a480a127f6d344a7fb0efcb24dd73, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 240.324
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: e29a480a127f6d344a7fb0efcb24dd73, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e29a480a127f6d344a7fb0efcb24dd73, type: 3}
