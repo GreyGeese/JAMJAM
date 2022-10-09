@@ -101,6 +101,9 @@ public class Player : MonoBehaviour
         Debug.Log(score);
     }
     
-
+    public void SetAmountOfPlayersSpawned(int aops)
+    {
+        amountOfPlayersSpawned = aops;
+    }
 
 }

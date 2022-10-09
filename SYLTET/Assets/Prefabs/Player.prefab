@@ -1088,7 +1088,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1.9
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1132,7 +1132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JumpVelocity: 30
-  fallMultiplier: 2.5
+  fallMultiplier: 16.65
   lowJumpMultiplier: 2.5
   collisionMask:
     serializedVersion: 2
@@ -1166,6 +1166,7 @@ MonoBehaviour:
   audioManager: {fileID: 0}
   rigidExplosion: {fileID: 8927772873166001941, guid: e8a9f464c77b2e444a8f74be619b054c, type: 3}
   rigidExplosionPosiition: {fileID: 6197023383834278983}
+  timeBetweenShots: 0.5
 --- !u!1 &7725659391538534747
 GameObject:
   m_ObjectHideFlags: 0
