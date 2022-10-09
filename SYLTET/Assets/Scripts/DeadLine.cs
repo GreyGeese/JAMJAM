@@ -25,7 +25,6 @@ public class DeadLine : MonoBehaviour
         timer += Time.deltaTime;
             if (timer > deadline)
             {
-                Time.timeScale = 0;
                 canvas.renderMode = RenderMode.ScreenSpaceCamera;
                 camera.clearFlags = CameraClearFlags.Depth;
                 camera.cullingMask = LayerMask.GetMask("UI") + LayerMask.GetMask("Player");
