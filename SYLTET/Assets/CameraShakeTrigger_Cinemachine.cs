@@ -1,7 +1,7 @@
-/* using Cinemachine;
+using Cinemachine;
 using UnityEngine;
 
-public class CameraShake : MonoBehaviour
+public class CameraShakeTrigger_Cinemachine : MonoBehaviour
 {
     private CinemachineVirtualCamera cinemachineVirtualCamera;
     private float shakeTimer;
@@ -41,4 +41,3 @@ public class CameraShake : MonoBehaviour
         }
     }
 }
-*/
